@@ -1,7 +1,7 @@
 {
   "name": "national-dishes-of-the-world",
   "version": "0.1.0",
-  "homepage":"https://keithwhitson.github.io/national-dishes-of-the-world",
+  "homepage": "https://keithwhitson.github.io/national-dishes-of-the-world",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -11,9 +11,13 @@
     "@types/node": "^16.18.96",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "sqlite3": "^5.1.7",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
