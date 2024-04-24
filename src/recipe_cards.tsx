@@ -18,7 +18,6 @@ import CardMedia from '@mui/material/CardMedia';
 const RecipeCardComponent: React.FC = () => {
 
 
-
 //   const [countries, setCountries] = useState<Array<{name: string, code: string | null, title:string, dish: string | null}>>([]);
   const [randomCountries, setRandomCountries] = useState<Array<{name: string, code: string | null, title:string, dish:string | null, overview: string | null, originsandcreation: string | null, id?: number, culturalsignificance: string | null , whatmakesitnationaldish: string | null, instructions: string | null , ingredients: string | null}>>([]);
   const [withRecipes, setWithRecipes] = useState<Array<{name: string, code: string | null, title:string, dish:string | null, overview: string | null, originsandcreation: string | null,  id?: number, culturalsignificance: string | null, whatmakesitnationaldish: string | null, instructions: string | null, ingredients: string | null}>>([]);
@@ -30,6 +29,7 @@ const RecipeCardComponent: React.FC = () => {
         const randomCountry = allCountries[randomIndex];
         setRandomCountries([randomCountry]);
       };
+
 
       const randomCountry = async (): Promise<void> => {
         const allCountries = await db.newcountries.toArray();
@@ -66,7 +66,8 @@ const RecipeCardComponent: React.FC = () => {
                 instructions: country.Instructions,
                 ingredients: country.Ingredients
               }));
-            db.newcountries.bulkPut(formattedCountriesList)
+
+              db.newcountries.bulkPut(formattedCountriesList)
               .then(() => {
                 allCountries()
                 console.log(formattedCountriesList)
@@ -76,6 +77,9 @@ const RecipeCardComponent: React.FC = () => {
 
     });
   }, [allCountries]);
+
+
+
 
 
   const card = (
@@ -107,7 +111,7 @@ const RecipeCardComponent: React.FC = () => {
       {withRecipes[0] && withRecipes[0].overview}
       <br /><br />
       </Typography>
-      <Typography align="left"> Origina and Creation </Typography>
+      <Typography align="left"> Origin and Creation </Typography>
       <Typography variant="body2" color="text.secondary" align="left">
       {(withRecipes[0]?.originsandcreation ?? '')}
       <br /><br />

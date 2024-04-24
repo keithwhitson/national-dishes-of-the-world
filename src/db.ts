@@ -20,7 +20,7 @@ class MyDatabase extends Dexie {
 
   constructor() {
     super("MyDatabase_");
-    this.version(12).stores({
+    this.version(13).stores({
       newcountries: '++id, name, code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients'
     });
   }
@@ -29,10 +29,10 @@ class MyDatabase extends Dexie {
 const db = new MyDatabase();
 
 // Check the current version of the database
-if (db.verno < 12) {
+if (db.verno < 13) {
   // If the current version is less than 11, delete the database and create a new one
   db.delete().then(() => {
-    db.version(12).stores({
+    db.version(13).stores({
       newcountries: '++id, name, code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients'
     });
   });
