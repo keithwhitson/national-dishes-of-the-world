@@ -1,23 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import ReactGA from 'react-ga4'
 import './App.css';
+import RecipeCardComponent from './recipe_cards'
+
+const Measurement_Id = 'G-463K0R483W';
+ReactGA.initialize(Measurement_Id);
+
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <RecipeCardComponent/>
       </header>
     </div>
   );
