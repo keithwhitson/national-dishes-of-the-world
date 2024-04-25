@@ -50,33 +50,34 @@ const RecipeCardComponent: React.FC = () => {
         withRecipe();
       },[])
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    db.newcountries.count().then(count => {
-        if (count ===0){
-            const formattedCountriesList = countries_list.map(country => ({
-                name: country.Name,
-                code: country.Code,
-                title: country.Title,
-                dish: country.Dish,
-                overview: country.Overview,
-                originsandcreation: country.OriginsAndCreation,
-                culturalsignificance: country.CulturalSignificance,
-                whatmakesitnationaldish: country.WhatMakesItNationalDish,
-                instructions: country.Instructions,
-                ingredients: country.Ingredients
-              }));
+  //   db.newcountries.count().then(count => {
+  //     console.log(db)
+  //       if (count ===0){
+  //           const formattedCountriesList = countries_list.map(country => ({
+  //               name: country.Name,
+  //               code: country.Code,
+  //               title: country.Title,
+  //               dish: country.Dish,
+  //               overview: country.Overview,
+  //               originsandcreation: country.OriginsAndCreation,
+  //               culturalsignificance: country.CulturalSignificance,
+  //               whatmakesitnationaldish: country.WhatMakesItNationalDish,
+  //               instructions: country.Instructions,
+  //               ingredients: country.Ingredients
+  //             }));
 
-              db.newcountries.bulkPut(formattedCountriesList)
-              .then(() => {
-                allCountries()
-                console.log(formattedCountriesList)
-            })
-              .catch(error => console.error("Error loading JSON into IndexedDB:", error));
-        }
+  //             db.newcountries.bulkPut(formattedCountriesList)
+  //             .then(() => {
+  //               allCountries()
+  //               console.log(formattedCountriesList)
+  //           })
+  //             .catch(error => console.error("Error loading JSON into IndexedDB:", error));
+  //       }
 
-    });
-  }, [allCountries]);
+  //   });
+  // }, [allCountries]);
 
 
 
