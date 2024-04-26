@@ -103,7 +103,7 @@ const RecipeCardComponent: React.FC = () => {
         <CardMedia
         component="img"
         height="194"
-        image="https://mui.com/static/images/cards/paella.jpg"
+        image="https://raw.githubusercontent.com/keithwhitson/national-dishes-of-the-world/gh-pages/country_pics/Botswana.webp"
         alt={(withRecipes[0]?.dish ?? '')}
       />
       <CardContent>
