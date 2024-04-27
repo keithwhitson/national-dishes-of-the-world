@@ -19,8 +19,8 @@ const RecipeCardComponent: React.FC = () => {
 
 
 //   const [countries, setCountries] = useState<Array<{name: string, code: string | null, title:string, dish: string | null}>>([]);
-  const [randomCountries, setRandomCountries] = useState<Array<{name: string, code: string | null, title:string, dish:string | null, overview: string | null, originsandcreation: string | null, id?: number, culturalsignificance: string | null , whatmakesitnationaldish: string | null, instructions: string | null , ingredients: string | null}>>([]);
-  const [withRecipes, setWithRecipes] = useState<Array<{name: string, code: string | null, title:string, dish:string | null, overview: string | null, originsandcreation: string | null,  id?: number, culturalsignificance: string | null, whatmakesitnationaldish: string | null, instructions: string | null, ingredients: string | null}>>([]);
+  const [randomCountries, setRandomCountries] = useState<Array<{name: string, code: string | null, title:string, dish:string | null, overview: string | null, originsandcreation: string | null, id?: number, culturalsignificance: string | null , whatmakesitnationaldish: string | null, instructions: string | null , ingredients: string | null, imagelink: string | null}>>([]);
+  const [withRecipes, setWithRecipes] = useState<Array<{name: string, code: string | null, title:string, dish:string | null, overview: string | null, originsandcreation: string | null,  id?: number, culturalsignificance: string | null, whatmakesitnationaldish: string | null, instructions: string | null, ingredients: string | null, imagelink: string | null}>>([]);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const allCountries = async (): Promise<void> => {
@@ -50,38 +50,6 @@ const RecipeCardComponent: React.FC = () => {
         withRecipe();
       },[])
 
-  // useEffect(() => {
-
-  //   db.newcountries.count().then(count => {
-  //     console.log(db)
-  //       if (count ===0){
-  //           const formattedCountriesList = countries_list.map(country => ({
-  //               name: country.Name,
-  //               code: country.Code,
-  //               title: country.Title,
-  //               dish: country.Dish,
-  //               overview: country.Overview,
-  //               originsandcreation: country.OriginsAndCreation,
-  //               culturalsignificance: country.CulturalSignificance,
-  //               whatmakesitnationaldish: country.WhatMakesItNationalDish,
-  //               instructions: country.Instructions,
-  //               ingredients: country.Ingredients
-  //             }));
-
-  //             db.newcountries.bulkPut(formattedCountriesList)
-  //             .then(() => {
-  //               allCountries()
-  //               console.log(formattedCountriesList)
-  //           })
-  //             .catch(error => console.error("Error loading JSON into IndexedDB:", error));
-  //       }
-
-  //   });
-  // }, [allCountries]);
-
-
-
-
 
   const card = (
     <React.Fragment>
@@ -103,7 +71,8 @@ const RecipeCardComponent: React.FC = () => {
         <CardMedia
         component="img"
         height="194"
-        image="https://raw.githubusercontent.com/keithwhitson/national-dishes-of-the-world/gh-pages/country_pics/Botswana.webp"
+        // image="https://raw.githubusercontent.com/keithwhitson/national-dishes-of-the-world/gh-pages/country_pics/Botswana.webp"
+        image={(withRecipes[0]?.imagelink ?? '')}
         alt={(withRecipes[0]?.dish ?? '')}
       />
       <CardContent>

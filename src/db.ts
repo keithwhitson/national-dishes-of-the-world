@@ -13,6 +13,7 @@ interface Country {
     whatmakesitnationaldish: string | null;
     instructions: string | null;
     ingredients: string | null;
+    imagelink: string | null;
 }
 
 // Extend the Dexie class with your tables
@@ -22,7 +23,7 @@ class MyDatabase extends Dexie {
   constructor() {
     super("DishDatabase");
     this.version(13).stores({
-      newcountries: '++id, name, code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients',
+      newcountries: '++id, name, code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients, imagelink',
     });
   }
 }
@@ -34,14 +35,14 @@ if (db.verno < 11) {
   // If the current version is less than 11, delete the database and create a new one
   db.delete().then(() => {
     db.version(13).stores({
-      newcountries: '++id, name, code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients'
+      newcountries: '++id, name, code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients, imagelink'
     });
   });
 }
 
 
-  db.version(17).stores({
-    newcountries: '++id, name, code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients'
+  db.version(18).stores({
+    newcountries: '++id, name, code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients, imagelink'
   }).upgrade(async (transaction) => {
     await db.newcountries.clear();
     const formattedCountriesList = countries_list.map(country => ({
@@ -54,7 +55,8 @@ if (db.verno < 11) {
       culturalsignificance: country.CulturalSignificance,
       whatmakesitnationaldish: country.WhatMakesItNationalDish,
       instructions: country.Instructions,
-      ingredients: country.Ingredients
+      ingredients: country.Ingredients,
+      imagelink: country.ImageLink
     }));
     await db.newcountries.bulkAdd(formattedCountriesList);
   });
