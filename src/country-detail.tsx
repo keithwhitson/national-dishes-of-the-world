@@ -35,9 +35,10 @@ const CountryDetailComponent: React.FC=() => {
 
   const card = (
     <React.Fragment>
+
         <CardHeader
                 avatar={
-                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                    <Avatar sx={{ bgcolor: "#b2dbd4" }} aria-label="recipe">
                       {specificCountry && (specificCountry?.dish ?? '')[0]}
                     </Avatar>
                   }
@@ -53,37 +54,36 @@ const CountryDetailComponent: React.FC=() => {
         <CardMedia
         component="img"
         height="194"
-        // image="https://raw.githubusercontent.com/keithwhitson/national-dishes-of-the-world/gh-pages/country_pics/Botswana.webp"
         image={(specificCountry?.imagelink ?? '')}
         alt={(specificCountry?.dish ?? '')}
       />
       <CardContent>
-        <Typography align="left"> Overview </Typography>
-      <Typography variant="body2" color="text.secondary" align="left">
+        <Typography align="left" style={{ color: '#032153' }}> Overview </Typography>
+      <Typography variant="body2" color="text.secondary" align="left" style={{ color: '#53afad' }}>
       {specificCountry && specificCountry.overview}
       <br /><br />
       </Typography>
-      <Typography align="left"> Origin and Creation </Typography>
-      <Typography variant="body2" color="text.secondary" align="left">
+      <Typography align="left" style={{ color: '#032153' }}> Origin and Creation </Typography>
+      <Typography variant="body2" color="text.secondary" align="left" style={{ color: '#53afad' }}>
       {(specificCountry?.originsandcreation ?? '')}
       <br /><br />
       </Typography>
-      <Typography align="left"> Cultural Significance </Typography>
-      <Typography variant="body2" color="text.secondary" align="left">
+      <Typography align="left" style={{ color: '#032153' }}> Cultural Significance </Typography>
+      <Typography variant="body2" color="text.secondary" align="left" style={{ color: '#53afad' }}>
         {(specificCountry?.culturalsignificance ?? '')}
         <br /><br />
       </Typography>
-      <Typography align="left"> What Makes it a National Dish </Typography>
-      <Typography variant="body2" color="text.secondary" align="left">
+      <Typography align="left" style={{ color: '#032153' }}> What Makes it a National Dish </Typography>
+      <Typography variant="body2" color="text.secondary" align="left" style={{ color: '#53afad' }}>
         {(specificCountry?.whatmakesitnationaldish ?? '')}
         <br /><br />
       </Typography>
-      <Typography align="left"> Ingredients </Typography>
-      <Typography variant="body2" color="text.secondary" align="left">{(specificCountry?.ingredients ?? '')}
+      <Typography align="left" style={{ color: '#032153' }}> Ingredients </Typography>
+      <Typography variant="body2" color="text.secondary" align="left" style={{ color: '#53afad' }}>{(specificCountry?.ingredients ?? '')}
       <br /><br />
       </Typography>
-      <Typography align="left"> Instructions </Typography>
-      <Typography variant="body2" color="text.secondary" align="left">{(specificCountry?.instructions ?? '')}
+      <Typography align="left" style={{ color: '#032153' }}> Instructions </Typography>
+      <Typography variant="body2" color="text.secondary" align="left" style={{ color: '#53afad' }}>{(specificCountry?.instructions ?? '')}
       </Typography>
       </CardContent>
       <CardActions>
@@ -92,8 +92,10 @@ const CountryDetailComponent: React.FC=() => {
   );
 
   return (
+
     <Box>
-        <Card >
+      <Typography style={{color:'#025278'}}>Recipe</Typography>
+        <Card style={{ backgroundColor: 'beige' }}>
             {card}
         </Card>
     </Box>

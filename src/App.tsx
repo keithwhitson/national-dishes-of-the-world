@@ -17,7 +17,6 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-        <img src={logo} alt="Logo" className="logo"/>
           <Routes>
             <Route path="/" element ={<RecipeCardComponent/>} />
             <Route path="/country/:code" element={<CountryDetailComponent />} />

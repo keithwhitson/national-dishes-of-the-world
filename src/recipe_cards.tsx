@@ -12,6 +12,7 @@ import { red } from '@mui/material/colors';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import CardMedia from '@mui/material/CardMedia';
+import logo from './images/logo.png'
 
 const RecipeCardComponent: React.FC = () => {
 
@@ -45,55 +46,63 @@ const RecipeCardComponent: React.FC = () => {
 
   const card = (
     <React.Fragment>
+      <div style={{ display: 'flex', justifyContent: 'space-between',alignItems: 'center'}}>
         <CardHeader
                 avatar={
-                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                    <Avatar sx={{ bgcolor: "#b2dbd4" }} aria-label="recipe">
                       {withRecipes[0] && (withRecipes[0]?.dish ?? '')[0]}
                     </Avatar>
                   }
-                          action={
-                    <IconButton aria-label="settings">
-                      <MoreVertIcon />
-                    </IconButton>
-                  }
-                      title = {withRecipes[0] && withRecipes[0].name}
-                      subheader = {withRecipes[0] && withRecipes[0].dish}>
+
+                      title = <Typography style={{ color: '#032153' }}>{withRecipes[0] && withRecipes[0].name}</Typography>
+                      subheader = <Typography style={{ color: '#53afad' }}>{withRecipes[0] && withRecipes[0].dish}</Typography>
+                      >
 
         </CardHeader>
         <CardMedia
         component="img"
-        height="194"
-        // image="https://raw.githubusercontent.com/keithwhitson/national-dishes-of-the-world/gh-pages/country_pics/Botswana.webp"
+        image={logo}
+        alt="Logo"
+        style={{ width: '15%', paddingRight: '2%', paddingTop: '5%', opacity:'0.4'}}
+        />
+        </div>
+
+
+
+      <CardContent>
+        <CardMedia
+        component="img"
+        style = {{ height: 194, paddingBottom: '3%'}}
         image={(withRecipes[0]?.imagelink ?? '')}
         alt={(withRecipes[0]?.dish ?? '')}
       />
-      <CardContent>
-        <Typography align="left"> Overview </Typography>
-      <Typography variant="body2" color="text.secondary" align="left">
+
+        <Typography align="left" style={{ color: '#032153' }}> Overview </Typography>
+      <Typography variant="body2" color="text.secondary" align="left" style={{ color: '#53afad' }}>
       {withRecipes[0] && withRecipes[0].overview}
       <br /><br />
       </Typography>
-      <Typography align="left"> Origin and Creation </Typography>
-      <Typography variant="body2" color="text.secondary" align="left">
+      <Typography align="left" style={{ color: '#032153' }}> Origin and Creation </Typography>
+      <Typography variant="body2" color="text.secondary" align="left" style={{ color: '#53afad' }}>
       {(withRecipes[0]?.originsandcreation ?? '')}
       <br /><br />
       </Typography>
-      <Typography align="left"> Cultural Significance </Typography>
-      <Typography variant="body2" color="text.secondary" align="left">
+      <Typography align="left" style={{ color: '#032153' }}> Cultural Significance </Typography>
+      <Typography variant="body2" color="text.secondary" align="left" style={{ color: '#53afad' }}>
         {(withRecipes[0]?.culturalsignificance ?? '')}
         <br /><br />
       </Typography>
-      <Typography align="left"> What Makes it a National Dish </Typography>
-      <Typography variant="body2" color="text.secondary" align="left">
+      <Typography align="left" style={{ color: '#032153' }}> What Makes it a National Dish </Typography>
+      <Typography variant="body2" color="text.secondary" align="left" style={{ color: '#53afad' }}>
         {(withRecipes[0]?.whatmakesitnationaldish ?? '')}
         <br /><br />
       </Typography>
-      <Typography align="left"> Ingredients </Typography>
-      <Typography variant="body2" color="text.secondary" align="left">{(withRecipes[0]?.ingredients ?? '')}
+      <Typography align="left" style={{ color: '#032153' }}> Ingredients </Typography>
+      <Typography variant="body2" color="text.secondary" align="left" style={{ color: '#53afad' }}>{(withRecipes[0]?.ingredients ?? '')}
       <br /><br />
       </Typography>
-      <Typography align="left"> Instructions </Typography>
-      <Typography variant="body2" color="text.secondary" align="left">{(withRecipes[0]?.instructions ?? '')}
+      <Typography align="left" style={{ color: '#032153' }}> Instructions </Typography>
+      <Typography style={{ color: '#53afad' }} variant="body2" color="text.secondary" align="left">{(withRecipes[0]?.instructions ?? '')}
       </Typography>
       </CardContent>
       <CardActions>
@@ -103,6 +112,7 @@ const RecipeCardComponent: React.FC = () => {
 
 return (
     <Box>
+      {/* <Typography style={{color:'#025278'}}>Recipe</Typography> */}
         <Card style={{ backgroundColor: 'beige' }}>
             {card}
         </Card>
