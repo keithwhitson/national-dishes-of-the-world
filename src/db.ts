@@ -41,7 +41,7 @@ if (db.verno < 11) {
 }
 
 
-  db.version(18).stores({
+  db.version(27).stores({
     newcountries: '++id, name, code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients, imagelink'
   }).upgrade(async (transaction) => {
     await db.newcountries.clear();
