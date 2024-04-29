@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import db from './db';
-import countries_list from '../src/countries.json';
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import { red } from '@mui/material/colors';
@@ -22,13 +20,7 @@ const RecipeCardComponent: React.FC = () => {
   const [randomCountries, setRandomCountries] = useState<Array<{name: string, code: string | null, title:string, dish:string | null, overview: string | null, originsandcreation: string | null, id?: number, culturalsignificance: string | null , whatmakesitnationaldish: string | null, instructions: string | null , ingredients: string | null, imagelink: string | null}>>([]);
   const [withRecipes, setWithRecipes] = useState<Array<{name: string, code: string | null, title:string, dish:string | null, overview: string | null, originsandcreation: string | null,  id?: number, culturalsignificance: string | null, whatmakesitnationaldish: string | null, instructions: string | null, ingredients: string | null, imagelink: string | null}>>([]);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const allCountries = async (): Promise<void> => {
-        const allCountries = await db.newcountries.toArray();
-        const randomIndex = Math.floor(Math.random() * allCountries.length);
-        const randomCountry = allCountries[randomIndex];
-        setRandomCountries([randomCountry]);
-      };
+
 
 
       const randomCountry = async (): Promise<void> => {
@@ -111,31 +103,11 @@ const RecipeCardComponent: React.FC = () => {
 
 return (
     <Box>
-        <Card >
+        <Card style={{ backgroundColor: 'beige' }}>
             {card}
         </Card>
     </Box>
-    // <div>
-    //     <h1>{withRecipes.map(country => (
-    //             <ul style={{ listStyleType: 'none' }}>
-    //             <li>
-    //                 Country: {country.name} <br />
-    //             </li>
-    //             </ul>
-    //         ))}</h1>
-    //     <ul style={{ listStyleType: 'none' }}>
-    //         {withRecipes.map(country => (
-    //             <li>
-    //                Dish:  {country.dish && country.dish !== '' && country.dish} <br /> <br />
-    //                Code: {country.code && country.code !=='' && country.code} <br /> <br />
-    //                Title: { country.title && country.title !=='' && country.title  } <br /> <br />
-    //                Overview: { country.overview && country.overview !=='' && country.overview } <br /> <br />
-    //                Origins and Creation:  { country.originsandcreation && country.originsandcreation !=='' && country.originsandcreation } <br /> <br />
-    //                Recipe:  { country.recipe && country.recipe !=='' && country.recipe}
-    //             </li>
-    //         ))}
-    //     </ul>
-    // </div>
+
 );
 };
 

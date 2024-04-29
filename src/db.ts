@@ -23,7 +23,7 @@ class MyDatabase extends Dexie {
   constructor() {
     super("DishDatabase");
     this.version(13).stores({
-      newcountries: '++id, name, code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients, imagelink',
+      newcountries: '++id, name, &code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients, imagelink',
     });
   }
 }
@@ -35,14 +35,14 @@ if (db.verno < 11) {
   // If the current version is less than 11, delete the database and create a new one
   db.delete().then(() => {
     db.version(13).stores({
-      newcountries: '++id, name, code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients, imagelink'
+      newcountries: '++id, name, &code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients, imagelink'
     });
   });
 }
 
 
-  db.version(27).stores({
-    newcountries: '++id, name, code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients, imagelink'
+  db.version(30).stores({
+    newcountries: '++id, name, &code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients, imagelink'
   }).upgrade(async (transaction) => {
     await db.newcountries.clear();
     const formattedCountriesList = countries_list.map(country => ({
