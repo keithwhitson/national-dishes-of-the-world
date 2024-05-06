@@ -10,9 +10,6 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
-import { red } from '@mui/material/colors';
-import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import CardMedia from '@mui/material/CardMedia';
 
 const CountryDetailComponent: React.FC = () => {
