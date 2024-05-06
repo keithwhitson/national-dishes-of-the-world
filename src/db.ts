@@ -19,9 +19,8 @@ interface Country {
 // Extend the Dexie class with your tables
 class MyDatabase extends Dexie {
   newcountries!: Dexie.Table<Country, number>; // string is the type of the primary key
-  newcountries_!: Dexie.Table<Country, number>;
   constructor() {
-    super("DishDatabase");
+    super("DishDatabase_2");
     this.version(13).stores({
       newcountries: '++id, name, &code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients, imagelink',
     });
@@ -30,18 +29,10 @@ class MyDatabase extends Dexie {
 
 const db = new MyDatabase();
 
-// Check the current version of the database
-if (db.verno < 11) {
-  // If the current version is less than 11, delete the database and create a new one
-  db.delete().then(() => {
-    db.version(13).stores({
-      newcountries: '++id, name, &code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients, imagelink'
-    });
-  });
-}
 
 
-  db.version(30).stores({
+
+  db.version(37).stores({
     newcountries: '++id, name, &code, title, dish, overview, originsandcreation, culturalsignificance, whatmakesitnationaldish,  instructions, ingredients, imagelink'
   }).upgrade(async (transaction) => {
     await db.newcountries.clear();
