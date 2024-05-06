@@ -37,7 +37,8 @@
   }
 }
 
-.logo { /* Adjust this value to change the height of the logo */
+.logo {
+  /* Adjust this value to change the height of the logo */
   width: 30%; /* This keeps the aspect ratio of the logo */
   position: relative;
   right: 35%;
