@@ -77,7 +77,7 @@ const CountryDetailComponent: React.FC = () => {
         />
       </div>
       <CardContent>
-                <CardMedia
+        <CardMedia
           component="img"
           style={{ height: 194, paddingBottom: '3%' }}
           image={specificCountry?.imagelink ?? ''}
