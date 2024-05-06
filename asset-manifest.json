@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/national-dishes-of-the-world/static/css/main.ed6f9b10.css",
-    "main.js": "/national-dishes-of-the-world/static/js/main.80c99748.js",
+    "main.js": "/national-dishes-of-the-world/static/js/main.a84f3dbb.js",
     "static/js/453.38564c8a.chunk.js": "/national-dishes-of-the-world/static/js/453.38564c8a.chunk.js",
     "static/media/logo.png": "/national-dishes-of-the-world/static/media/logo.8cc6e3da11420c10aa85.png",
     "index.html": "/national-dishes-of-the-world/index.html",
     "main.ed6f9b10.css.map": "/national-dishes-of-the-world/static/css/main.ed6f9b10.css.map",
-    "main.80c99748.js.map": "/national-dishes-of-the-world/static/js/main.80c99748.js.map",
+    "main.a84f3dbb.js.map": "/national-dishes-of-the-world/static/js/main.a84f3dbb.js.map",
     "453.38564c8a.chunk.js.map": "/national-dishes-of-the-world/static/js/453.38564c8a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ed6f9b10.css",
-    "static/js/main.80c99748.js"
+    "static/js/main.a84f3dbb.js"
   ]
 }
